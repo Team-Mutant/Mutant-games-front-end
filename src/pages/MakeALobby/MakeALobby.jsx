@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import GameSearch from '../../components/GameSearch/GameSearch.jsx'
 import * as GameService from '../../services/gameService'
-
+import styles from './MakeALobby.module.css'
 function MakeALobby({ handleCreateLobby}) {
   
   // State , Constants, & Helper Functions
@@ -62,39 +62,54 @@ function handleGameSelection(e) {
   }, [formData, games])
 
   return (
-    <>
-      <h1>Create A Lobby</h1>
+    <> 
+      <div className={styles.center}>
+        <h1>Create A Lobby</h1>
+      </div> 
       <form
         onSubmit={handleSubmit}
         ref={formElement}
+        className={styles.makeALobby}
       >
-        <h3>Lobby Name</h3>
-        <input
-          required
-          type="text"
-          id='lobbyName'
-          name='name'
-          onChange={handleChange}
-        />
-        < GameSearch
-            formData={formData}
-            handleChange={handleChange}
-            searchResults={searchResults}
-            handleGameSelection={handleGameSelection}
-        />
-        <h3>Player Limit</h3>
-        <input
-          type="number"
-          id='lobbyLimit'
-          name='lobbyLimit'
-          onChange={handleChange}
-          required
-          />
-        <button
-          type='submit'
-          disabled={!validForm}>
-            Create
-        </button>
+        <div className={styles.allInputs}>
+          <div className={styles.lobbyName}>
+            <h3>Lobby Name</h3>
+            <input
+              required
+              type="text"
+              id='lobbyName'
+              name='name'
+              onChange={handleChange}
+            />
+          </div>
+          <div className={styles.playerLimit}>
+            <h3>Player Limit</h3>
+            <input
+              type="number"
+              id='lobbyLimit'
+              name='lobbyLimit'
+              onChange={handleChange}
+              required
+              />
+          </div>
+          <div className={styles.gameSearch}>
+            < GameSearch
+                formData={formData}
+                handleChange={handleChange}
+                searchResults={searchResults}
+                handleGameSelection={handleGameSelection}
+            />
+          </div>
+         </div>
+         <div className={styles.button}>
+          <button
+            type='submit'
+            disabled={!validForm}
+            className={styles.createButton}
+            >
+              Create
+          </button>
+        </div>
       </form>
     </>
   );
