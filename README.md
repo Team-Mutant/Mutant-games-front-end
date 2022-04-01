@@ -29,7 +29,7 @@ touch .env
 4. Add the following line of code to the .env file you just created.
 
 ```bash
-REACT_APP_BACKEND_SERVER_URL=http://localhost:3001
+REACT_APP_BACKEND_SERVER_URL=http://localhost:3001/
 ```
 
 5. Install all dependencies by running the command: 
