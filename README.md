@@ -47,7 +47,7 @@ npm start
 
 Home Screen
 
-<img alt="Homepage" src="https://i.imgur.com/XiOlgSb.png" width="600px" >
+<img alt="Homepage" src="https://i.imgur.com/Bpcyqwr.png" width="600px" >
 
 Log In Screen
 
